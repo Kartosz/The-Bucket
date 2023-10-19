@@ -347,3 +347,17 @@ header{
     opacity: 1;
     transform: translateY(0); /* Slide up to its original position */
 }
+
+/* Updated CSS for game type */
+.box .box-text .game-type {
+    margin: auto;
+}
+/* Add this CSS to style the game's price */
+.price {
+    font-size: 1rem; /* Adjust the font size as needed */
+    color: var(--main-color); /* Set the color to your preferred color */
+    font-weight: 600; /* Adjust the font weight as needed */
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  

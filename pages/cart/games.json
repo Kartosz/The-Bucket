@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Counter Strike: 2",
+        "price": 15,
+        "image": "../../img/trending2.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Stray",
+        "price": 15,
+        "image": "../../img/trending2.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Little Nightmares 2",
+        "price": 15,
+        "image": "../../img/trending3.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Doom: Eternal",
+        "price": 15,
+        "image": "../../img/trending4.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Poppy PLaytime",
+        "price": 15,
+        "image": "../../img/trending5.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Dying Light 2: Stay Human",
+        "price": 15,
+        "image": "../../img/trending6.jpg"
+    }
+]

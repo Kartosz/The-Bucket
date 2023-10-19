@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bucket's Cart</title>
+    <title>The Bucket</title>
+    <link rel="icon" href="img/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!-- header aseasease -->
+    <header>
+        <div class="nav container">
+            <a href="bucket.html" class="logo">The<span>Bucket</span></a>
+            <div class="nav-icons">
+                <i class='bx bx-bell' id="bell-icon"><span></span></i>
+                <i class='bx bxs-cart bx-tada' id="icon-cart"><span>0</span></i>
+            </div>
+
+            
+            <!-- notify -->
+            <div class="notification">
+                <div class="notification-box">
+                    <i class='bx bxs-check-circle' ></i>
+                    <p>Your account was successfully created</p>
+                </div>
+                <div class="notification-box box-color">
+                    <i class='bx bxs-x-circle' ></i>
+                    <p>You don't have enough money to pay for Counter Strike: 2's prime</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- list -->
+    <div class="listProduct">
+
+    </div>
+
     
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            
+        </div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">Check Out</button>
+        </div>
+    </div>
+
+    <script type="module" src="../../js/firebase-init.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
