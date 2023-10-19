@@ -1,10 +1,16 @@
-const form = document.querySelector("form");
-eField = form.querySelector(".email"),
-eInput = eField.querySelector("input"),
-pField = form.querySelector(".password"),
-pInput = pField.querySelector("input");
+import {
+  createUserWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+import { auth } from "../../js/firebase-init.js";
 
-form.onsubmit = (e)=>{
+const form = document.querySelector("form");
+let eField = form.querySelector(".email");
+let eInput = eField.querySelector("input");
+let pField = form.querySelector(".password");
+let pInput = pField.querySelector("input");
+let email = form.querySelector("#email");
+
+form.onsubmit = async (e) => {
   e.preventDefault(); //preventing from form submitting
   //if email and password is blank then add shake class in it else call specified function
   (eInput.value == "") ? eField.classList.add("shake", "error") : checkEmail();
@@ -44,6 +50,26 @@ form.onsubmit = (e)=>{
 
   //if eField and pField doesn't contains error class that mean user filled details properly
   if(!eField.classList.contains("error") && !pField.classList.contains("error")){
-    window.location.href = '../login/login.html'; //redirecting user to the specified url which is inside action attribute of form tag
+    await registerUser(email.value, pInput.value);
+  }
+}
+
+async function registerUser(email, password){
+  //   validate user
+  try {
+    //sucess
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    console.log(userCredential);
+
+    setTimeout(() => {
+      window.location.href = '../login/login.html'; //redirecting user to the specified url which is inside action attribute of form tag
+    }, 1);
+  } catch (error) {
+    //handle failures here
+    console.log(error.code);
   }
 }
