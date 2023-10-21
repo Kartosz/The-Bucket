@@ -475,12 +475,12 @@ body.showCart .cartTab {
 
 .listCart .item .totalPrice {
     display: flex;
+    justify-content: center;
     text-align: center;
     font-size: 24px;
     font-weight: 600;
     align-self: center;
-    text-align: right;
-    color: #fa5353; /* Text color for the total price */
+    color: var(--main-color); /* Text color for the total price */
 }
 
 .listCart .item .quantity {
