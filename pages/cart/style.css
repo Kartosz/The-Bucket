@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
-*{
+
+* {
     font-family: 'Rubik', sans-serif;
     margin: 0;
     padding: 0;
@@ -9,33 +10,40 @@
     text-decoration: none;
     scroll-padding-top: 2rem;
 }
-:root{
+
+:root {
     --main-color: #fa5353;
     --dark-color: #1b182b;
     --light-color: #322f40;
-    --text-color: hsl(0,0%,91%);
+    --text-color: hsl(0, 0%, 91%);
 }
-::selection{
+
+::selection {
     color: var(--text-color);
     background: var(--main-color);
 }
-section{
+
+section {
     padding: 4rem 0 3rem;
 }
-img{
+
+img {
     width: 100%;
 }
-body{
+
+body {
     color: var(--text-color);
-    background: var(--dark-color)
+    background: var(--dark-color);
 }
-.container{
+
+.container {
     max-width: 1068px;
     margin: auto;
     width: 100%;
 }
+
 /* header */
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -44,30 +52,34 @@ header{
     z-index: 100;
 }
 
+
 /* nav */
-.nav{
+.nav {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px 0;
 }
-.logo{
+
+.logo {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--text-color);
     text-transform: uppercase;
     margin: 0 auto 0 0;
 }
-.logo span{
+
+.logo span {
     color: var(--main-color);
 }
 
-.nav-icons{
+.nav-icons {
     display: flex;
     align-items: center;
     column-gap: 1rem;
 }
-.nav-icons .bx{
+
+.nav-icons .bx {
     font-size: 20px;
     height: 44px;
     width: 44px;
@@ -84,10 +96,11 @@ header{
     justify-content: center;
 }
 
-#icon-cart{
+#icon-cart {
     position: relative;
 }
-#icon-cart span{
+
+#icon-cart span {
     position: absolute;
     font-size: 10px;
     background-color: red;
@@ -102,7 +115,7 @@ header{
     right: 2px;
 }
 
-.menu-icon{
+.menu-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,25 +129,29 @@ header{
     z-index: 200;
     transition: 0.3s;
 }
-.menu-icon div{
+
+.menu-icon div {
     display: block;
     background: var(--text-color);
     height: 2px;
     width: 25px;
     transition: 0.3s;
 }
-.move .line1{
+
+.move .line1 {
     transform: rotate(-45deg) translate(-5px, 5px);
 }
-.move .line2{
+
+.move .line2 {
     opacity: 0;
 }
-.move .line3{
+
+.move .line3 {
     transform: rotate(45deg) translate(-5px, -5px);
 }
 
 /* menu */
-.menu{
+.menu {
     position: fixed;
     left: 0;
     top: 0;
@@ -148,30 +165,35 @@ header{
     transition: 0.5s;
     clip-path: circle(0% at 100% 0%);
 }
-.menu.active{
+
+.menu.active {
     clip-path: circle(144% at 100% 0%);
 }
-.menu img{
+
+.menu img {
     width: 800px;
 }
-.navbar{
+
+.navbar {
     display: grid;
     row-gap: 1rem;
     text-align: right;
     padding-right: 2rem;
 }
-.navbar a{
+
+.navbar a {
     font-size: 1.6rem;
     color: var(--text-color);
     font-weight: 500;
     transition: 0.2s;
 }
-.navbar a:hover{
+
+.navbar a:hover {
     border-bottom: 4px solid var(--main-color);
     font-size: 1.8rem;
 }
 
-.notification{
+.notification {
     position: absolute;
     top: 110%;
     right: 5rem;
@@ -183,13 +205,15 @@ header{
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    clip-path: circle(0% at 100% 0%)
+    clip-path: circle(0% at 100% 0%);
 }
-.notification.active{
+
+.notification.active {
     clip-path: circle(144% at 100% 0%);
     transition: 0.3s;
 }
-.notification-box{
+
+.notification-box {
     display: flex;
     align-items: baseline;
     column-gap: 1rem;
@@ -197,75 +221,106 @@ header{
     background: var(--dark-color);
     padding: 10px;
 }
-.notification-box .bx{
+
+.notification-box .bx {
     color: #faf102;
 }
-.box-color{
+
+.box-color {
     background: hsl(0, 0%, 100%, 0.4);
 }
-.box-color .bx{
+
+.box-color .bx {
     color: var(--main-color);
 }
 
-.cartTab{
-    width: 400px;
-    background-color: #353432;
+.cartTab {
+    z-index: 101;
+    width: 500px;
+    background-color: var(--main-color); /* Use your custom color variable */
     color: #eee;
     position: fixed;
-    top: 0;
-    right: -400px;
+    top: 75px;
+    right: -500px;
     bottom: 0;
     display: grid;
     grid-template-rows: 70px 1fr 70px;
     transition: .5s;
 }
-body.showCart .cartTab{
+
+body.showCart .cartTab {
     right: 0;
 }
-body.showCart .container{
-    transform: translateX(-250px);
-}
-.cartTab h1{
+
+
+.cartTab h1 {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
     padding: 20px;
     margin: 0;
-    font-weight: 300;
+
 }
 .cartTab .btn{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 .cartTab button{
-    background-color: #E8BC0E;
+    background-color: var(--main-color);
     border: none;
-    font-family: Poppins;
-    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
     cursor: pointer;
 }
 .cartTab .close{
-    background-color: #eee;
+    background-color: var(--text-color);
 }
-.listCart .item img{
-    width: 100%;
-}
-.listCart .item{
+.listCart .item {
     display: grid;
     grid-template-columns: 70px 150px 50px 1fr;
-    gap: 10px;
     text-align: center;
     align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    height: 180px;
 }
-.listCart .quantity span{
-    display: inline-block;
-    width: 25px;
-    height: 25px;
+
+.listCart .item img {
+    max-height: 100%;
+}
+
+.listCart .item .name {
+    font-weight: 500;
+}
+
+.listCart .item .totalPrice {
+    font-weight: 500;
+}
+
+.listCart .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.listCart .quantity span {
+    width: 30px;
+    height: 30px;
     background-color: #eee;
     border-radius: 50%;
-    color: #555;
+    font-size: 18px;
     cursor: pointer;
 }
-.listCart .quantity span:nth-child(2){
+.listCart .quantity .minus,
+.listCart .quantity .plus {
+    transform: rotate(90deg);
+}
+
+.listCart .quantity span:nth-child(2) {
     background-color: transparent;
-    color: #eee;
     cursor: auto;
 }
 .listCart .item:nth-child(even){
@@ -290,3 +345,171 @@ body.showCart .container{
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.listProduct {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 100px;
+    padding-left: 800px;
+    padding-right: 800px;
+    overflow-y: auto;
+}
+
+.listProduct::-webkit-scrollbar {
+    width: 5px;
+    background: #353432;
+}
+
+.listProduct::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+.listProduct::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.listProduct .item {
+    gap: 3px;
+    flex: 0 0 calc(900px / 4 - 20px);
+    position: relative;
+    border: 1px solid #111;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column; /* Set the item to display as a column */
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+.listProduct .item img {
+    height: 100%; /* Adjust height to fit content */
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.listProduct .item h2 {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.listProduct .item .price {
+    color: var(--main-color);
+    font-size: 1.2rem;
+    padding-top: 3px; /* Adjust the margin to control the space */
+    text-align: center;
+}
+
+.listProduct .item .addCart {
+    z-index: 1;
+    align-self: center;
+    padding: 10px 20px;
+    background: var(--main-color);
+    color: var(--dark-color);
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+
+.listProduct .item .addCart:hover {
+    background: var(--dark-color); /* Change background color on hover */
+    color: var(--main-color); /* Change text color on hover */
+}
+
+.listCart {
+    overflow-y: auto;
+    padding: 20px;
+    background-color: var(--light-color);
+    display: grid;
+    row-gap: 20px;
+    transition: 0.3s;
+}
+
+.listCart::-webkit-scrollbar {
+    width: 5px;
+    background: #353432;
+}
+
+.listCart::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+.listCart::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+/* Add this CSS to style the cart items */
+.listCart .item {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px 50px;
+    border: 1px solid #faf102;
+    border-radius: 0.5rem;
+    position: relative;
+    padding: 10px;
+    background-color: #222; /* Background color for cart items */
+    margin-bottom: 5px; /* Reduce the margin between cart items to 5px */
+}
+
+.listCart .item .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.listCart .item .name {
+    font-size: 20px;
+    align-self: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff; /* Text color for cart item names */
+}
+
+.listCart .item .totalPrice {
+    display: flex;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    align-self: center;
+    text-align: right;
+    color: #fa5353; /* Text color for the total price */
+}
+
+.listCart .item .quantity {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 70px;
+    background: var(--dark-color);
+    border-radius: 0.5rem;
+}
+
+.listCart .item .quantity span {
+    display: grid;
+    place-items: center;
+    background: #222; /* Background color for quantity buttons */
+    font-size: 20px;
+    color: #fa5353; /* Text color for quantity buttons */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.listCart .item .quantity span:hover {
+    background: #fa5353; /* Background color on hover for quantity buttons */
+    color: #fff; /* Text color on hover for quantity buttons */
+}
+
