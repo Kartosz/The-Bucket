@@ -467,11 +467,12 @@ body.showCart .cartTab {
 .listCart .item .name {
     font-size: 20px;
     align-self: center;
-    white-space: nowrap;
+    white-space: normal; /* Add this property to enable text wrapping */
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #fff; /* Text color for cart item names */
+    color: #fff;
 }
+
 
 .listCart .item .totalPrice {
     display: flex;
