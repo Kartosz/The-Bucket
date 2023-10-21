@@ -465,7 +465,7 @@ body.showCart .cartTab {
 }
 
 .listCart .item .name {
-    font-size: 20px;
+    font-size: 18px;
     align-self: center;
     white-space: normal; /* Add this property to enable text wrapping */
     overflow: hidden;

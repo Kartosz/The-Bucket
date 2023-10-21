@@ -62,37 +62,52 @@ const addToCart = (product_id) => {
 const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+// Modify the addCartToHTML function to display the total price
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
+    let totalPrice = 0;
     let totalQuantity = 0;
-    if(cart.length > 0){
+
+    if (cart.length > 0) {
         cart.forEach(item => {
-            totalQuantity = totalQuantity +  item.quantity;
+            totalQuantity += item.quantity;
+
             let newItem = document.createElement('div');
             newItem.classList.add('item');
             newItem.dataset.id = item.product_id;
 
             let positionProduct = products.findIndex((value) => value.id == item.product_id);
             let info = products[positionProduct];
+
+            let itemTotalPrice = info.price * item.quantity;
+            totalPrice += itemTotalPrice;
+
             listCartHTML.appendChild(newItem);
             newItem.innerHTML = `
-            <div class="image">
+                <div class="image">
                     <img src="${info.image}">
                 </div>
                 <div class="name">
-                ${info.name}
+                    ${info.name}
                 </div>
-                <div class="totalPrice">$${info.price * item.quantity}</div>
+                <div class="totalPrice">$${itemTotalPrice.toFixed(2)}</div>
                 <div class="quantity">
                     <span class="plus"><</span>
                     <span>${item.quantity}</span>
                     <span class="minus">></span>
                 </div>
             `;
-        })
+        });
     }
+
+    // Update the cart tab title with the total price
+    let cartTabTitle = document.querySelector('.cartTab h1');
+    cartTabTitle.textContent = `Total: $${totalPrice.toFixed(2)}`;
+
     iconCartSpan.innerText = totalQuantity;
 }
+
+// Rest of your code remains unchanged
 
 listCartHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
@@ -144,3 +159,4 @@ const initApp = () => {
     })
 }
 initApp();
+
