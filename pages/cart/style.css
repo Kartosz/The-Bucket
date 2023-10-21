@@ -427,7 +427,7 @@ body.showCart .cartTab {
     overflow-y: auto;
     padding: 20px;
     background-color: var(--light-color);
-    display: grid;
+
     row-gap: 20px;
     transition: 0.3s;
 }
@@ -454,7 +454,7 @@ body.showCart .cartTab {
     position: relative;
     padding: 10px;
     background-color: #222; /* Background color for cart items */
-    margin-bottom: 5px; /* Reduce the margin between cart items to 5px */
+    margin-bottom: 15px; /* Reduce the margin between cart items to 5px */
 }
 
 .listCart .item .image img {
