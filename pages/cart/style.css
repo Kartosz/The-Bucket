@@ -494,7 +494,7 @@ body.showCart .cartTab {
     right: 0;
     bottom: 0;
     top: 0;
-    width: 70px;
+    width: 60px;
     background: var(--dark-color);
     border-radius: 0.5rem;
 }
