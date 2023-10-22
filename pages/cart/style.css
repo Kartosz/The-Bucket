@@ -348,10 +348,13 @@ body.showCart .cartTab {
 
 .listProduct {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    padding-top: 100px;
+    padding-left: 800px;
+    padding-right: 800px;
     overflow-y: auto;
-    padding: 20px 40px;
 }
 
 .listProduct::-webkit-scrollbar {
@@ -510,4 +513,3 @@ body.showCart .cartTab {
     background: #fa5353; /* Background color on hover for quantity buttons */
     color: #fff; /* Text color on hover for quantity buttons */
 }
-
